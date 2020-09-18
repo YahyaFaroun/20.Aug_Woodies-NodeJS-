@@ -2,15 +2,15 @@ const http = require('http')
 const fs = require('fs')
 const path = require('path')
 
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  
+from = "/*"
+to = "/index.html"
+status = 200
+
 const server = http.createServer((req, res) => {
     console.log(req.url)
     console.log(req.method)
     if (req.url === '/') {
-       fs.readFile('./public/index.html', (err, data) => {
+        fs.readFile('./public/index.html', (err, data) => {
             if (err) throw err
             res.writeHead(200, { 'Content-Type': 'text/html' })
             res.end(data)
