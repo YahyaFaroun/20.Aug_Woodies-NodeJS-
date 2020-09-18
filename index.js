@@ -2,6 +2,10 @@ const http = require('http')
 const fs = require('fs')
 const path = require('path')
 
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  
 const server = http.createServer((req, res) => {
     console.log(req.url)
     console.log(req.method)
